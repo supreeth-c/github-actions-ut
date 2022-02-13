@@ -10,3 +10,7 @@ jobs:
         run : |
           node -v
           npm -v
+      - name : Check for python version
+        run : |
+          python --version
+          python --version
