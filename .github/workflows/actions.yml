@@ -7,7 +7,7 @@ jobs:
       - name: Simple JS Action
         id: greet
         #uses: actions/hellow-world-javascript-action@master -- branch
-        uses: actions/hello-world-javascript-action@v1 # version
+        uses: actions/hello-world-javascript-action@v1.1
         #uses: actions/hellow-world-javascript-action@<commit_id> -- commit id
         with: 
           who-to-greet: Supreeth
