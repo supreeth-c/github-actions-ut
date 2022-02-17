@@ -4,12 +4,13 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout 
+        uses: actions/checkout@v1
+
       - name: List files
         run: |
           pwd
-          ls
-      - name: Checkout 
-        uses: actions/checkout@v1
+          ls -a
       - name: Simple JS Action
         id: greet
         #uses: actions/hellow-world-javascript-action@master -- branch
