@@ -4,6 +4,10 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: List files
+        run: |
+          pwd
+          ls
       - name: Simple JS Action
         id: greet
         #uses: actions/hellow-world-javascript-action@master -- branch
