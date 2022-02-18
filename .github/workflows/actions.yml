@@ -4,6 +4,18 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+    
+      - name: List files
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}"
+          echo $GITHUB_BASE_REF
+        #git clone git@github:$GITHUB_REPOSITORY
+
       - name: Checkout 
         uses: actions/checkout@v1
 
