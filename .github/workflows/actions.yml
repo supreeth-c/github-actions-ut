@@ -12,8 +12,9 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
-          echo "${{ github.token }}"
           echo $GITHUB_BASE_REF
+          echo "${{ github.token }}"
+          
         #git clone git@github:$GITHUB_REPOSITORY
 
       - name: Checkout 
