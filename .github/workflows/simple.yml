@@ -1,5 +1,5 @@
 name: Shell Commands 
-on : [push, pull_request]
+on : [pull_request_review_comment]
 jobs: 
   run-shell-command:
     runs-on: ubuntu-latest

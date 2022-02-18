@@ -1,9 +1,19 @@
-name:  Action Workflow 
-on: [push]
+name: New Action workflow
+on:
+  repository_dispatch:
+    type: [build]
+  # schedule:
+  #   - cron: "0/5 * * * * "
+  #   - cron: "0/6 * * * * "
+  #push:
+  pull_request:
+    types: [closed, assigned, opened, reopened]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Payload
+        run: echo ${{ github.event.client_payload.env}}
     
       - name: List files
         run: |
@@ -13,7 +23,8 @@ jobs:
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo $GITHUB_REF
-          echo $GITHUB_REF_NAME
+          echo "To which its getting merged" $GITHUB_REF_NAME
+          echo "The current branch name" $GITHUB_HEAD_REF
           echo "${{ github.token }}"
           
         #git clone git@github:$GITHUB_REPOSITORY
