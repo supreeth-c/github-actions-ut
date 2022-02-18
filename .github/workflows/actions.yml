@@ -1,6 +1,7 @@
 name: New Action workflow
 on:
   repository_dispatch:
+    type: [build]
   # schedule:
   #   - cron: "0/5 * * * * "
   #   - cron: "0/6 * * * * "
