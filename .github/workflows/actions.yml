@@ -5,8 +5,14 @@ on:
   # schedule:
   #   - cron: "0/5 * * * * "
   #   - cron: "0/6 * * * * "
-  #push:
+  push:
+    branches-ignore:
+      - main
+      - 'feature/*' # matches feature/featA, feature/featb, doesn't match feature/feat/a
+      - 'feature/**'
   pull_request:
+    branches:
+      - main
     types: [closed, assigned, opened, reopened]
 jobs:
   run-github-actions:
