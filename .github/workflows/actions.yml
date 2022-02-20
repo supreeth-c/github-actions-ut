@@ -10,9 +10,19 @@ on:
       - main
       - 'feature/*' # matches feature/featA, feature/featb, doesn't match feature/feat/a
       - 'feature/**'
+      - '!feature/abc' #ignoring feature/abc branch
+    tags:
+      - v1.*
+    paths:
+      - '**.js'
+      - '!filename.js'
   pull_request:
     branches:
       - main
+    tags-ignore:
+      - v1.*
+    paths-ignore:
+      - 'docs/**'
     types: [closed, assigned, opened, reopened]
 jobs:
   run-github-actions:
